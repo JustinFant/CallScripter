@@ -1,5 +1,5 @@
 import streamlit as st
-import datetime
+import datetime as dt
 import pythoncom
 from functions.format_script import format_script
 from functions.verify_inputs import format_phone, verify_email, format_candidate_name, format_entries
@@ -27,7 +27,7 @@ recruiter_email = verify_email(recruiter_name)
 recruiter_name, candidate_name, work_location = format_entries(recruiter_name, candidate_name, work_location)
 
 # Set Greeting Based On Time of Day
-current_hour = datetime.datetime.now().hour
+current_hour = dt.datetime.now().hour
 if current_hour < 12:
   greeting = "morning"
 else:
